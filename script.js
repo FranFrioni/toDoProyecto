@@ -1,8 +1,16 @@
-const itemList = [];
+let itemList = [];
 
 document.getElementById("btnAddTask").addEventListener("click", addTask);
 
-isEmptyList();
+if (!localStorage.itemList){
+    localStorage.setItem("itemList", itemList);
+    isEmptyList();
+} else {
+    itemList = (localStorage.itemList).split(",");
+    refreshList();
+    isEmptyList();
+}
+
 function isEmptyList(){
     if(itemList.length === 0){
         document.getElementById("list").innerHTML = "<p class='my-3 text-center'>There is no tasks yet, try adding one!</p>";
@@ -21,7 +29,7 @@ function refreshList(){
     for (let i = 0; i < itemList.length; i++) {
         document.getElementById(i).textContent = itemList[i];
     }
-    refreshCounter()
+    refreshCounter();
 }
 
 function refreshCounter(){
@@ -38,6 +46,7 @@ function addTask(){
     document.getElementById("inputAddTask").value = "";
     if (value !== ""){
         itemList.push(value);
+        localStorage.itemList = itemList;
         document.getElementById("alert").classList.add("d-none");
         refreshList();
     } else {
@@ -47,6 +56,7 @@ function addTask(){
 
 function removeTask(index){
     itemList.splice(index, 1);
+    localStorage.itemList = itemList;
     refreshList();
     isEmptyList();
 }
