@@ -10,15 +10,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="container">
+  <header>
+    <h1 class="display-1 my-3 border-bottom border-dark text-center">To-Do List</h1>
+  </header>
   <main>
-    <h1 class="display-1 my-3 border-bottom border-dark">To-Do List</h1>
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mb-4">
       <label for="inputAddTask" class="col-12 col-md-2 lead fs-1 text-center">Add a task</label>
       <input type="text" class="rounded-3 col-6 me-3" placeholder="Task name here..." name="inputAddTask" id="inputAddTask">
-      <button class="btn btn-outline-dark col-2 col-md-1" type="button" id="btnAddTask">Add</button>
+      <button class="btn btn-outline-success col-2 col-md-1" type="button" id="btnAddTask">Add</button>
     </div>
     <div class="alert alert-danger d-none" role="alert" id="alert"><p class="lead m-1 text-center">You must insert the task name!</p></div>
-    <div id="counter" class="display-6 mb-3 text-center"></div>
+    <div id="counter" class="lead fs-3 mb-3 text-center"></div>
     <div id="list" class="lead p-2"></div>
   </main>
   <script src="script.js"></script>

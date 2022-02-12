@@ -13,7 +13,7 @@ if (!localStorage.itemList){
 
 function isEmptyList(){
     if(itemList.length === 0){
-        document.getElementById("list").innerHTML = "<p class='my-3 text-center'>There is no tasks yet, try adding one!</p>";
+        document.getElementById("list").innerHTML = "<p class='my-3 text-center'>There are no tasks yet, try adding one!</p>";
     }
 }
 
